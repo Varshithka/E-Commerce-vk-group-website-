@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 15% 3%;
+    --foreground: 210 40% 95%;
+
+    --card: 240 15% 6%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 240 15% 6%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 170 100% 50%;
+    --primary-foreground: 240 15% 3%;
+
+    --secondary: 280 100% 65%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 10% 12%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 240 15% 3%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 170 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-cyan: 170 100% 50%;
+    --neon-purple: 280 100% 65%;
+    --neon-pink: 330 100% 65%;
+    --neon-gold: 45 100% 55%;
+    --neon-green: 140 100% 50%;
+    --neon-blue: 220 100% 60%;
+
+    --glow-cyan: 0 0 20px hsl(170, 100%, 50%, 0.4), 0 0 60px hsl(170, 100%, 50%, 0.15);
+    --glow-purple: 0 0 20px hsl(280, 100%, 65%, 0.4), 0 0 60px hsl(280, 100%, 65%, 0.15);
+    --glow-pink: 0 0 20px hsl(330, 100%, 65%, 0.4), 0 0 60px hsl(330, 100%, 65%, 0.15);
+    --glow-gold: 0 0 20px hsl(45, 100%, 55%, 0.4), 0 0 60px hsl(45, 100%, 55%, 0.15);
+
+    --gradient-neon: linear-gradient(135deg, hsl(170, 100%, 50%), hsl(280, 100%, 65%));
+    --gradient-fire: linear-gradient(135deg, hsl(330, 100%, 65%), hsl(45, 100%, 55%));
+    --gradient-ocean: linear-gradient(135deg, hsl(220, 100%, 60%), hsl(170, 100%, 50%));
+    --gradient-card: linear-gradient(145deg, hsl(240, 15%, 8%), hsl(240, 15%, 4%));
+
+    --font-display: 'Orbitron', monospace;
+    --font-heading: 'Rajdhani', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    --sidebar-background: 240 15% 5%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 170 100% 50%;
+    --sidebar-primary-foreground: 240 15% 3%;
+    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 240 10% 15%;
+    --sidebar-ring: 170 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+
+  ::selection {
+    background: hsl(170, 100%, 50%, 0.3);
+    color: hsl(210, 40%, 98%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(240, 15%, 5%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(170, 100%, 50%, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(170, 100%, 50%, 0.5);
+  }
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(170, 100%, 50%, 0.5), 0 0 40px hsl(170, 100%, 50%, 0.2);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(280, 100%, 65%, 0.5), 0 0 40px hsl(280, 100%, 65%, 0.2);
+  }
+
+  .text-glow-pink {
+    text-shadow: 0 0 10px hsl(330, 100%, 65%, 0.5), 0 0 40px hsl(330, 100%, 65%, 0.2);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 10px hsl(45, 100%, 55%, 0.5), 0 0 40px hsl(45, 100%, 55%, 0.2);
+  }
+
+  .box-glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+
+  .box-glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  .box-glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+
+  .box-glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+
+  .gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .gradient-fire {
+    background: var(--gradient-fire);
+  }
+
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+
+  .neon-border {
+    border: 1px solid hsl(170, 100%, 50%, 0.3);
+  }
+
+  .neon-border-purple {
+    border: 1px solid hsl(280, 100%, 65%, 0.3);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .glass {
+    background: hsl(240, 15%, 8%, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(170, 100%, 50%, 0.1);
+  }
+
+  .glass-purple {
+    background: hsl(280, 15%, 8%, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(280, 100%, 65%, 0.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes grid-move {
+  0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes celebrate {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(0.95); }
+  45% { transform: scale(1.05); }
+  60% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
